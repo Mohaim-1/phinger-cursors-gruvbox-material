@@ -8,7 +8,7 @@
 
 let
   pkgName = "phinger-cursors-gruvbox-material";
-  cursorSet = variant + (if lefty then "-left" else "");
+  cursorSet = "phinger-cursors-gruvbox-material-" + variant + (if lefty then "-left" else "");
 in
   lib.checkListOfEnum "${pkgName}: variants" ["dark" "light"] [variant]
   stdenvNoCC.mkDerivation {
@@ -17,7 +17,7 @@ in
 
     src = fetchurl {
       url = "https://github.com/Mohaim-1/phinger-cursors-gruvbox-material/releases/download/v0.1-alpha/phinger-cursors-variants.tar.bz2";
-      sha256 = "1hfs4212n2vi3a9d0rl0ljd1l0cgh0kva6ig8q34n2x5072w6f6s";
+      sha256 = "0bg5nz88c8bcnk6sb6h3sxx93gk1vrl8nvl5b6a1y8zskq9i2g67";
     };
 
     sourceRoot = ".";
