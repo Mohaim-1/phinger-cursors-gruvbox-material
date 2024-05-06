@@ -48,7 +48,7 @@ jobs:
       - name: Build Cursor Theme
         uses: phisch/cursor-theme-builder/action/build@v1.0
         with:
-          cursor_theme_json: theme/cursor-theme.json
+          cursor_theme_json: build/cursor-theme.json
           output_directory: ${{ env.BUILD_DIRECTORY }}/themes
       - name: Create artifact
         working-directory: ${{ env.BUILD_DIRECTORY }}
