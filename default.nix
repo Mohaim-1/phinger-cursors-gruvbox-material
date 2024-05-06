@@ -1,27 +1,31 @@
 {
   lib,
   stdenvNoCC,
-  fetchFromGitHub,
+  fetchurl,
   variant ? "light",
   lefty ? false
 }:
 
 let
   pkgName = "phinger-cursors-gruvbox-material";
-  cursorSet = variant + (lefty ? "-left");
+  cursorSet = variant + (if lefty then "-left" else "");
 in
   lib.checkListOfEnum "${pkgName}: variants" ["dark" "light"] [variant]
   stdenvNoCC.mkDerivation {
     pname = pkgName;
     version = "2.0";
 
-    src = fetchFromGitHub {};
+    src = fetchurl {
+      url = "https://github.com/Mohaim-1/phinger-cursors-gruvbox-material/releases/download/v0.1-alpha/phinger-cursors-variants.tar.bz2";
+      sha256 = "1hfs4212n2vi3a9d0rl0ljd1l0cgh0kva6ig8q34n2x5072w6f6s";
+    };
 
+    sourceRoot = ".";
 
     installPhase = ''
       runHook preInstall
       mkdir -p $out/share/icon
-      cp -r ./cursor-themes/${variant} $out/share/icons/
+      cp -r ./${cursorSet} $out/share/icons/
       runHook postInstall
     '';
 

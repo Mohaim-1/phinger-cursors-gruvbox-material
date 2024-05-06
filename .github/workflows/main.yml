@@ -6,7 +6,7 @@ jobs:
     name: Export the latest theme and its assets from the Figma file
     env:
       EXPORT_DIRECTORY: export
-      OUTPUT_DIRECTORY: theme
+      OUTPUT_DIRECTORY: build
     outputs:
       version: ${{ steps.figma_export.outputs.version }}
     steps:
@@ -18,9 +18,9 @@ jobs:
         with:
           access_token: ${{ secrets.FIGMA_ACCESS_TOKEN }}
           file_key: ${{ secrets.FIGMA_FILE_KEY }}
-          theme_name: Phinger Cursors
+          theme_name: Phinger Cursors (Gruvbox Material)
           theme_author: Philipp Schaffrath (phisch)
-          theme_comment: Most likely the most over engineered cursor theme.
+          theme_comment: Most likely the most over engineered cursor theme. Modified to match Gruvbox Material palette.
           output_directory: ${{ env.EXPORT_DIRECTORY }}
       - name: Replace theme
         run: |
@@ -56,7 +56,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: phinger-cursors-variants
+          name: phinger-cursors-gruvbox-material
           path: ${{ env.BUILD_DIRECTORY }}/${{ env.ARCHIVE_NAME }}
       - name: Draft Release
         uses: softprops/action-gh-release@v2
