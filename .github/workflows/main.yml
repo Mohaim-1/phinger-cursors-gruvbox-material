@@ -18,7 +18,7 @@ jobs:
         with:
           access_token: ${{ secrets.FIGMA_ACCESS_TOKEN }}
           file_key: ${{ secrets.FIGMA_FILE_KEY }}
-          theme_name: Phinger Cursors (Gruvbox Material)
+          theme_name: Phinger Cursors Gruvbox Material
           theme_author: Philipp Schaffrath (phisch)
           theme_comment: Most likely the most over engineered cursor theme. Modified to match Gruvbox Material palette.
           output_directory: ${{ env.EXPORT_DIRECTORY }}
