@@ -1,5 +1,5 @@
 {
-  "name": "Phinger Cursors",
+  "name": "Phinger Cursors Gruvbox Material",
   "variants": [
     {
       "name": "light",
@@ -1630,4 +1630,8 @@
       ]
     }
   ]
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 6020f12 (things)
