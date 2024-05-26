@@ -18,7 +18,7 @@ in
 
     src = fetchurl {
       url = "https://github.com/Mohaim-1/phinger-cursors-gruvbox-material/releases/download/v1.0/phinger-cursors-variants.tar.bz2";
-      sha256 = "";
+      sha256 = "sha256-TCadyzkurIi23rvpOFk/J7o8QdrZ0fN+QGr2yDhv9CI=";
     };
 
     sourceRoot = ".";
