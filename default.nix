@@ -7,17 +7,18 @@
 }:
 
 let
-  pkgName = "phinger-cursors-gruvbox-material";
+  pname = "phinger-cursors-gruvbox-material";
   cursorSet = "phinger-cursors-gruvbox-material-" + variant + (if lefty then "-left" else "");
 in
-  lib.checkListOfEnum "${pkgName}: variants" ["dark" "light"] [variant]
+  lib.checkListOfEnum "${pname}: variants" ["dark" "light"] [variant]
+
   stdenvNoCC.mkDerivation {
-    pname = pkgName;
+    inherit pname;
     version = "2.0";
 
     src = fetchurl {
-      url = "https://github.com/Mohaim-1/phinger-cursors-gruvbox-material/releases/download/v0.1-alpha/phinger-cursors-variants.tar.bz2";
-      sha256 = "1r3z0bzqynfn9c1irbgfprzbb1cpk0qshd0g1bp4dvj6gkbq82sn";
+      url = "https://github.com/Mohaim-1/phinger-cursors-gruvbox-material/releases/download/v1.0/phinger-cursors-variants.tar.bz2";
+      sha256 = "";
     };
 
     sourceRoot = ".";
@@ -37,3 +38,4 @@ in
       maintainers = [ ];
     };
   }
+
